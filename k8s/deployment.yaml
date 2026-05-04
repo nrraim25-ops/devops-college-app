@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: college-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: college-app
+  template:
+    metadata:
+      labels:
+        app: college-app
+    spec:
+      containers:
+        - name: backend
+          image: college-app-backend:latest
+          ports:
+            - containerPort: 5000
