@@ -15,5 +15,6 @@ spec:
       containers:
         - name: backend
           image: college-app-backend:latest
+          imagePullPolicy: Never   # 🔥 IMPORTANT
           ports:
             - containerPort: 5000
